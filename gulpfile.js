@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 	compass = require('gulp-compass');
 	gulpif = require('gulp-if');
 	uglify = require('gulp-uglify');
+	minifyHTML = require('gulp-minify-html');
 
 var env,
 	sassSources,
@@ -54,7 +55,7 @@ gulp.task('compass', function(){
 gulp.task('watch', function(){
 	gulp.watch('components/scripts/*.js', ['js']);
 	gulp.watch('components/sass/*.scss', ['compass']);
-	gulp.watch(outputDir + '*.html', ['html']);
+	gulp.watch('builds/development/*.html', ['html']);
 	gulp.watch(outputDir + 'js/*.json', ['json']);
 });
 
@@ -66,7 +67,9 @@ gulp.task('connect', function(){
 });
 
 gulp.task('html', function(){
-	gulp.src(outputDir+ '*.html')
+	gulp.src('builds/development/*.html')
+		.pipe(gulpif(env === 'production', minifyHTML()))
+		.pipe(gulpif(env === 'production', gulp.dest(outputDir)))
 		.pipe(connect.reload());
 });
 
