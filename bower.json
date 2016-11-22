@@ -1,0 +1,20 @@
+{
+  "name": "cg",
+  "description": "cg  website",
+  "main": "index.js",
+  "authors": [
+    "kc-slg"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kakitcheong/cg",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "boostrap-sass#^3.3.7"
+  }
+}
