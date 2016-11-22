@@ -5,6 +5,8 @@ var gulp = require('gulp'),
 	browserify = require('gulp-browserify'),
 	connect = require('gulp-connect'),
 	compass = require('gulp-compass');
+	gulpif = require('gulp-if');
+	uglify = require('gulp-uglify');
 
 var env,
 	sassSources,
@@ -23,24 +25,18 @@ if (env==='development'){
 
 sassSources = ['components/sass/style.scss'];
 
-gulp.task('log', function(){
-	for(i = 0; i < jsSources.length; i++){
-		gutil.log(jsSources[i]);	
-	}
-});
-
 gulp.task('js', function(){
 	gulp.src('components/scripts/*.js')
 		.pipe(count('## js-files selected'))
 		.pipe(concat('script.js'))
 		.pipe(browserify())
-		.on('error', gutil.log)
+		.pipe(gulpif(env === 'production', uglify()))
 		.pipe(gulp.dest(outputDir + 'js'))
 		.pipe(connect.reload())
 });
 
 gulp.task('compass', function(){
-	gulp.src('components/sass/style.scss')
+	gulp.src(sassSources)
 		.pipe(compass({
 			css: 'stylesheets',
 			sass: 'components/sass',
