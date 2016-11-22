@@ -1,0 +1,19 @@
+@import 'modular-scale';
+@include establish-baseline;
+
+$base-font-size: 16px; /*** compass vertical rhythm variable ***/
+$base-line-height: 6px; /*** compass vertical rhythm variable ***/
+$rhythm-unit: 'px';
+
+html{
+	@include adjust-leading-to(4);
+}
+
+$ms-base: 1em;
+$ms-ratio: $golden;
+
+$ms-1: ms(-1);
+$ms-05: ms(-0.5);
+$ms0: ms(0);
+$ms1: ms(1);
+$ms2: ms(2);
