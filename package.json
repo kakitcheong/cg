@@ -8,12 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "?.git"
+    "url": "https://github.com/kakitcheong/cg.git"
   },
   "author": "kc-slg",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-count": "^0.3.0",
     "gulp-util": "^3.0.7"
   }
 }
