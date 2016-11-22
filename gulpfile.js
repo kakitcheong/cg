@@ -18,6 +18,7 @@ gulp.task('js', function(){
 		.pipe(count('## js-files selected'))
 		.pipe(concat('script.js'))
 		.pipe(browserify())
+		.on('error', gutil.log)
 		.pipe(gulp.dest('builds/development/js'))
 });
 
@@ -34,6 +35,11 @@ gulp.task('compass', function(){
 		}))
 		.on('error', gutil.log)
 		.pipe(gulp.dest('builds/development/stylesheets'))
+});
+
+gulp.task('watch', function(){
+	gulp.watch('components/scripts/*.js', ['js']);
+	gulp.watch('components/sass/*.scss', ['compass']);
 });
 
 gulp.task('default', ['js', 'compass']);
