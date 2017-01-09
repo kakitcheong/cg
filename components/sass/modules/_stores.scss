@@ -1,0 +1,39 @@
+////////////////////////////////////////////////////////////////////////////////
+//  stores - index                                                 	          //
+////////////////////////////////////////////////////////////////////////////////
+
+.stores{
+	@extend .container-fluid;
+	//position: relative;
+	padding: 0;
+	padding-top: $el__spacer--lg*2;
+	padding-bottom: $el__spacer--lg*1.2;
+	background-color: $color__grey--light;
+	&__wrap{
+		@extend .container;
+	}
+	&__card{
+		@extend .col-xs-12, .col-md-4;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  lcoation - sub                                                 	          //
+////////////////////////////////////////////////////////////////////////////////
+
+.location{
+	&__info{
+		margin-top: $el__spacer--lg;
+		padding-bottom: $el__spacer--md;
+		&--contact{
+			@extend .location__info;
+			margin-top: $el__spacer--lg*4;
+		}
+	}
+	&__title{
+		@extend .col-md-3;
+	}
+	&__content{
+		@extend .col-md-4;
+	}
+}

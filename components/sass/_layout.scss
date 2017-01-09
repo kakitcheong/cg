@@ -1,0 +1,220 @@
+/*** =====================================================
+This document contains layout elements used in the application
+
+author: kc-slg
+created on: 23/11/2016
+last update: 25/11/2016
+===================================================== ***/
+
+// contents ------------
+//  - header
+//  - main
+//  - section separator
+//  - helper classes
+// ---------------------
+
+////////////////////////////////////////////////////////////////////////////////
+//  header                                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+.header{
+	//@extend .container-fluid;
+	//background-color: $color__wht;
+	//border-bottom: $el__border;
+	overflow: hidden;
+	&__navigation{
+		@extend .navbar, .navbar-fixed-top;
+		min-height: em(120);
+		//background: $color__wht;
+		@include transition(all, 0.4s, ease-in);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  main                                                                      //
+////////////////////////////////////////////////////////////////////////////////
+
+.main{
+	position: relative;
+	overflow: hidden;
+	&--sub-page{
+		@extend .container;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  footer                                                                    //
+////////////////////////////////////////////////////////////////////////////////
+
+.footer{
+	background-color: $color__grey--dark;
+	color: $color__wht;
+	@include adjust-font-size-to($ms-05);
+	padding: $el__spacer--md 0;
+	&__inner{
+		@extend .container;
+	}
+	&__social,
+	&__nav,
+	&__copy{
+		@extend .col-xs-12, .col-md-4;
+	}
+	&__social{
+		text-transform: uppercase;
+	}
+	a:hover{
+		color: $color__grey--dark*0.1;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  section separators                                                        //
+////////////////////////////////////////////////////////////////////////////////
+
+.big-triangle{
+	&:after,
+	&:before{
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 50%;
+		z-index: 100;
+		border-bottom: 50px solid $color__wht;
+		@include rotate(0.000001deg);
+	}
+	&:before{
+		right: 50%;
+		border-right: 1000px solid transparent;
+		border-left: 1000px solid;
+	}
+	&:after{
+		left: 50%;
+		border-left: 1000px solid transparent;
+		border-right: 1000px solid;
+	}
+	&--r-bottom{
+		&:after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width: 50%;
+			z-index: 100;
+			border-bottom: 50px solid $color__brand;
+			@include rotate(0.000001deg);
+			left: 50%;
+			border-left: 1000px solid transparent;
+			border-right: 1000px solid;	
+		}
+	}
+}
+
+.diagonal{
+	padding-top: $el__spacer--lg;
+	&:after,
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 50%;
+		z-index: 100;
+		border-top: 50px solid $color__wht;
+		@include rotate(0.000001deg);
+	}
+	&:before{
+		right: 50%;
+		border-right: 1000px solid transparent;
+		border-left: 1000px solid;
+	}
+	&:after{
+		left: 100%;
+		border-left: 1000px solid transparent;
+		border-right: 1000px solid;
+	}
+}
+
+.triangles{
+	&:before,
+	&:after{
+		position: absolute;
+		content: '';
+		//point-events: none;
+		left: 50%;
+		width: 50px;
+		height: 50px;
+		@include transform(translateX(-50%) rotate(45deg));	
+	}
+	&:before{
+		//top: -50px; 
+		//background: #000;
+	}
+	&:after{
+		bottom: -50px; 
+		z-index: 1000; 
+		background: $color__brand;	
+	}
+}
+
+.section-title{
+	&--single{
+		@extend .col-md-3;	
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  helper classes                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+.pull--center{
+	@extend .text-center;
+}
+.pull--left{
+	@extend .pull-left;
+}
+.pull--right{
+	@extend .pull-right;
+}
+.visible--mobile{
+	@extend .visible-xs, .visible-sm, .hidden-md, .hidden-lg; 
+}
+.visible--desktop{
+	@extend .hidden-xs, .hidden-sm, .visible-md, .visible-lg;
+}
+.push{
+	&__top{
+		&--xxs{
+			margin-top: $el__spacer--xxs;
+		}
+		&--xs{
+			margin-top: $el__spacer--xs;
+		}
+		&--sm{
+			margin-top: $el__spacer--sm;
+		}
+		&--md{
+			margin-top: $el__spacer--md;
+		}
+		&--lg{
+			margin-top: $el__spacer--lg;
+		}
+	}
+	&__bottom{
+		&--xxs{
+			margin-bottom: $el__spacer--xxs;
+		}
+		&--xs{
+			margin-bottom: $el__spacer--xs;
+		}
+		&--sm{
+			margin-bottom: $el__spacer--sm;
+		}
+		&--md{
+			margin-bottom: $el__spacer--md;
+		}
+		&--lg{
+			margin-bottom: $el__spacer--lg;
+		}
+	}
+}
+.center-container{
+	@extend .col-xs-12, .pull--center; 
+}

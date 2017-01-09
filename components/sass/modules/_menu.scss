@@ -1,0 +1,69 @@
+////////////////////////////////////////////////////////////////////////////////
+//  menu - index                                                              //
+////////////////////////////////////////////////////////////////////////////////
+
+.menu{
+	@extend .container-fluid;
+	position: relative;
+	padding: 0;
+	&__carousel{
+		@extend .col-xs-12;
+		padding: 0;
+	}
+	&__link-container{
+		@extend .col-xs-12;
+		background-color: $color__brand;
+		padding: $el__spacer--sm 0;
+	}
+////////////////////////////////////////////////////////////////////////////////
+//  menu - single                                                             //
+////////////////////////////////////////////////////////////////////////////////
+	&--single{
+		&__content{
+			@extend .col-md-8;
+			.table{
+				tr{
+					td{
+						padding: $el__spacer--xs 0;
+					}
+				}
+			}
+		}
+		&__section-break{
+			@extend .pull--center;
+			@include adjust-font-size-to($ms1);
+			color: $color__brand;
+			padding-bottom: $el__spacer--xs;
+			//border-bottom: $el__border;
+			//border-color: $color__brand;
+			.label--default{
+				position: relative;
+				top: em(-8px);
+			}
+		}
+	}
+}
+
+.dish{
+	&__img{
+		//width: 20% !important;
+		@include respond-to(md-screen){
+			width: 20% !important;
+		}
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__name,
+	&__price{
+		width: 40% !important;
+	}
+	&__name{
+		padding-left: $el__spacer--sm !important;
+	}
+	&__price{
+		color: $color__brand;
+		@include adjust-font-size-to($ms05);
+	}
+}

@@ -1,20 +1,199 @@
-@import 'modular-scale';
-@include establish-baseline;
+/*** =====================================================
+This document contains all typographic variables used in the application
 
+author: kc-slg
+created on: 19/11/2016
+last update: 23/11/2016
+===================================================== ***/
+
+// contents ------------
+//	- imports
+//  - typographic variables
+//      - base
+//		- typefaces
+//			- chinese
+//			- eng
+//			- weights
+//	- font-sizes
+//	- base-settings
+//	- headings
+//	- body-text
+//	- typographic voice
+// ---------------------
+
+@import 'modular-scale';
+@import '../fonts/ss-social/ss-social.css';
+
+////////////////////////////////////////////////////////////////////////////////
+//  typographic variables                                                     //
+////////////////////////////////////////////////////////////////////////////////
+
+/*** base ***/
 $base-font-size: 16px; /*** compass vertical rhythm variable ***/
 $base-line-height: 6px; /*** compass vertical rhythm variable ***/
 $rhythm-unit: 'px';
+@include establish-baseline;
 
-html{
-	@include adjust-leading-to(4);
-}
+/*** typefaces ***/
+/* chinese */	$base__font-family--chinese: "source-han-sans-traditional", sans-serif;
+
+/* weight */	$weight--light: 100;
+				$weight--normal: 300;
+				$weight--bold: 700;
+
+////////////////////////////////////////////////////////////////////////////////
+//  font-sizes                                                  		      //
+////////////////////////////////////////////////////////////////////////////////
 
 $ms-base: 1em;
 $ms-ratio: $golden;
 
+$ms-3: ms(-3);
+$ms-2: ms(-2);
 $ms-1: ms(-1);
 $ms-05: ms(-0.5);
-$ms0: ms(0);
+$ms0: ms(0); /*** base size 1em ***/
+$ms05: ms(0.5); /*** base size 1em ***/ 
 $ms1: ms(1);
 $ms2: ms(2);
+$ms25: ms(2.5);
+$ms3: ms(3);
 
+////////////////////////////////////////////////////////////////////////////////
+//   base-settings                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+html{
+	@include adjust-leading-to(4);
+}
+body{
+	font-family: $base__font-family--chinese;
+	font-weight: $weight--light;
+	font-style: normal; 
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  headings                                                                  //
+////////////////////////////////////////////////////////////////////////////////
+
+.h1,
+.h2{
+	font-weight: $weight--light;
+	margin: 0;
+}
+
+.h1{
+	@include adjust-font-size-to($ms2);
+	color: $color__brand;	
+}
+
+.h2{
+	&--hero{
+		@include adjust-font-size-to($ms25);
+		color: $color__wht;
+		text-shadow: 1px 1px 10px $color__grey--dark;
+	}
+	&--opening,
+	&--section-break{
+		@include adjust-font-size-to($ms2);
+		color: $color__brand;
+	}
+}
+
+.h3{
+	&--dish-title{
+		@include adjust-font-size-to($ms1);
+		color: $color__brand;
+	}
+}
+
+.banner-title{
+	color: $color__wht;
+	@include adjust-font-size-to($ms2);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//  body text                                                                 //
+////////////////////////////////////////////////////////////////////////////////
+
+.paragraph{
+	font-weight: $weight--normal;
+	color: $color__grey;
+	margin-top: $el__spacer--xs;
+	&--first{
+		@extend .paragraph;
+		margin-top: 0;
+	}
+	&--opening{
+		@extend .paragraph;
+		@include adjust-font-size-to($ms05);
+		color: $color__grey--dark;
+		margin-top: $el__spacer--sm;
+	}
+	&--sm{
+		@include adjust-font-size-to($ms-05);
+	}
+	&--light{
+		color: $color__wht;
+	}
+}
+
+a{
+	@include adjust-font-size-to(14px);
+	&:hover{
+		color: $color__brand;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  typographic voice                                                         //
+////////////////////////////////////////////////////////////////////////////////
+
+.label{
+	&--default{
+		//@extend .label;
+		@include adjust-font-size-to($ms-1);
+		//letter-spacing: em(2);
+		text-transform: uppercase;
+		position: relative;
+		top: em(-10px);
+	}
+	&--reversed{
+		@extend .label--default;
+		display: inline-block;
+		font-weight: $weight--bold;
+		background-color: $color__brand;
+		color: $color__wht;
+		padding: em(8) em(12);
+		position: relative;
+		left: em(20);
+		top: em(-16);
+	}
+	&--store{
+		@extend .label--default;
+		@include adjust-font-size-to($ms-05);
+		color: $color__brand;
+		font-weight: $weight--normal;
+		letter-spacing: em(2);
+		top: 0;
+		&:before{
+			content: '(';
+		}
+		&:after{
+			content: ')';
+		}
+	}
+}
+
+.meta{
+	font-weight: $weight--normal;
+	&--phone,
+	&--time{
+		@extend .meta;
+	}
+}
+
+.bold{
+	font-weight: $weight--normal;
+}

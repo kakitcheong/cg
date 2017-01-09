@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>滋味滿屋美食坊 – 首頁</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -12,7 +12,26 @@
 
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <!-- aos style -->
+        <link rel="stylesheet" href="bower_components/aos/dist/aos.css">
         <link rel="stylesheet" href="stylesheets/style.css">
+        <!-- polymer components -->
+        <link rel="import" href="bower_components/paper-card/paper-card.html">
+        <link rel="import" href="bower_components/iron-icons/communication-icons.html">
+        <link rel="import" href="bower_components/iron-icons/device-icons.html">
+        <!-- type kit -->
+        <script src="https://use.typekit.net/gxr4lph.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <style is="custom-style">
+            .sm-icon{
+                color: #E42C47;
+                position: relative;
+                top: -1px;
+                margin-right: 6px;
+                --iron-icon-height: 14px;
+                --iron-icon-width: 14px;
+            }
+        </style>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -20,20 +39,444 @@
         <![endif]-->
         
         <header class="header">
-            <p>Head</p>    
+            
+            <nav class="header__navigation" id="header-nav">
+                <div class="container">
+                    <div class="navigation-header">
+                        <!-- custom design goes here -->
+                        <button type='button' class="navigation-header__toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse" aria-expanded="false">
+                            <span class="icon-bar top-bar"></span>
+                            <span class="icon-bar middle-bar"></span>
+                            <span class="icon-bar middle-bar"></span>
+                            <span class="icon-bar bottom-bar"></span>
+                        </button> 
+                        <!-- /.navigation__toggle -->
+                        <a href="#" class="navigation-header__brand">
+                            <picture>
+                                <img src="images/global/main-logo.svg" alt="Main Logo">
+                            </picture>
+                        </a>
+                        <!-- /.navigatoin-header__brand -->
+                    </div>
+                    <!-- /.navigation-header -->
+
+                    <div class="navigation-wrapper" id="main-navbar-collapse">
+                        <ul class="main-navigation">
+                            <li class="main-navigation__item--active">
+                                <a href="#" class="main-navigation__link">
+                                    首頁<br>
+                                    <span class="label--default">Home</span>
+                                </a>
+                            </li>
+                            <!-- /.main-navigation__item -->
+                            <li class="main-navigation__item">
+                                <a href="#" class="main-navigation__link">
+                                    餐廳簡介<br>
+                                    <span class="label--default">About Us</span>
+                                </a>
+                            </li>
+                            <!-- /.main-navigation__item -->
+                            <li class="main-navigation__item">
+                                <a href="#" class="main-navigation__link">
+                                    滋味推介<br>
+                                    <span class="label--default">Special</span>
+                                </a>
+                            </li>
+                            <!-- /.main-navigation__item -->
+                            <li class="main-navigation__item">
+                                <a href="#" class="main-navigation__link">
+                                    滋味美食<br>
+                                    <span class="label--default">Our Menu</span>
+                                </a>
+                            </li>
+                            <!-- /.main-navigation__item -->
+                            <li class="main-navigation__item">
+                                <a href="#" class="main-navigation__link">
+                                    店鋪資料<br>
+                                    <span class="label--default">Locations</span>
+                                </a>
+                            </li>
+                            <!-- /.main-navigation__item -->
+                            <li class="main-navigation__item">
+                                <a href="#" class="main-navigation__link">
+                                    聯繫我們<br>
+                                    <span class="label--default">Contact Us</span>
+                                </a>
+                            </li>
+                            <!-- /.main-navigation__item -->
+                        </ul>
+                        <!-- /.main-navigation -->   
+                    </div>
+                    <!-- /.navigation-wrapper -->   
+                </div>
+                <!-- /.container -->
+
+            </nav>
+            <!-- /.header__navigation -->
+
+            <section class="header-hero">
+                <div class="header-hero__carousel big-triangle">
+
+                    <div class="carousel__item">
+                        <div class="carousel__img bg__img">
+                            <div class="carousel__info">
+                                <h2 class="carousel__title h2--hero">咸豬骨水蟹粥</h2>
+                                <img src="images/hero/hero-slide-001.jpg" alt="Slide 001">
+                            </div>
+                            <!-- /.carousel__info -->    
+                        </div>
+                        <!-- /.carousel__img -->    
+                    </div>
+                    <!-- /.carousel__item -->
+                    
+                    <div class="carousel__item">
+                        <div class="carousel__img bg__img">
+                            <div class="carousel__info">
+                                <h2 class="carousel__title h2--hero">滋味蠔皇大鮑魚</h2>
+                                <img src="images/hero/hero-slide-002.jpg" alt="Slide 002">    
+                            </div>
+                            <!-- /.carousel__info -->    
+                        </div>
+                        <!-- /.carousel__img -->    
+                    </div>
+                    <!-- /.carousel__item -->
+                    
+                    <div class="carousel__item">
+                        <div class="carousel__img bg__img">
+                            <div class="carousel__info">
+                                <h2 class="carousel__title h2--hero">滋味牛扒</h2>
+                                <img src="images/hero/hero-slide-004.jpg" alt="Slide 004">    
+                            </div>
+                            <!-- /.carousel__info -->    
+                        </div>
+                        <!-- /.carousel__img -->    
+                    </div>
+                    <!-- /.carousel__item -->
+
+                    <div class="carousel__item">
+                        <div class="carousel__img bg__img">
+                            <div class="carousel__info">
+                                <h2 class="carousel__title h2--hero">花雕藥膳醉雞煲</h2>
+                                <img src="images/hero/hero-slide-005.jpg" alt="Slide 005">    
+                            </div>
+                            <!-- /.carousel__info -->    
+                        </div>
+                        <!-- /.carousel__img -->    
+                    </div>
+                    <!-- /.carousel__item -->
+
+                    <div class="carousel__item">
+                        <div class="carousel__img bg__img">
+                            <div class="carousel__info">
+                                <h2 class="carousel__title h2--hero">魚羊一品鮮</h2>
+                                <img src="images/hero/hero-slide-006.jpg" alt="Slide 006">    
+                            </div>
+                            <!-- /.carousel__info -->    
+                        </div>
+                        <!-- /.carousel__img -->    
+                    </div>
+                    <!-- /.carousel__item -->   
+                
+                </div>
+                <!-- /.header-hero__carousel -->    
+            </section>
+            <!-- /.header-hero -->    
+        
         </header>
         <!-- /.header -->
 
         <main class="main">
-            <p>Main</p>   
+
+            <div class="opening-message">
+                <div class="big-triangle--r-bottom">
+                    <div class="row">
+                        <div class="opening-message__wrap">
+                            <h2 class="h2--opening" data-aos="fade-up" data-aos-duration="1000">
+                                時代在變&nbsp;&nbsp;滋味不變  
+                            </h2>
+                            <!-- /.h2--opening -->
+                            <p class="paragraph--opening" data-aos="fade">
+                                面對著澳門急速的經濟發展，澳門人用餐的時間大大減少。盛邦集團針對此現象創立第二個集團品牌，將輕便快捷的茶餐廳餐飲文化及澳門特有的中葡文化美食融合，便成為我們的滋味滿屋美食坊。   
+                            </p>
+                            <p class="paragraph" data-aos="fade" data-aos-delay="200">你現在閱讀的，並不是真的文案。這些文字，只顯示文案將會擺放的位置。我們會稱呼這些文案為「假字」。為何要用「假字」？因為在一般的情況下，在向客戶作初步提案時，我們通常只會先擬好主副標題和畫面，其他的細節如文案等，會待雙方作進一步的商量後，才再發展下去。當然，撰稿員在撰寫真的文案前，文案的流程、長度、語調等等，其實心目中已有一個腹稿。這段假文案，你竟也真的用心細看，謝謝</p>
+                            <!-- /.paragraph--opening -->
+                            <a href="#" class="btn__default btn__arrow push__top--md" data-aos="fade-right" data-aos-delay="300"><span>了解更多<span class="arrow">&#8594;</span></span></a>
+                        </div>
+                        <!-- /.opening-message__wrap -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.big-triangle--r-bottom -->
+            </div>
+            <!-- /.opening-message -->
+
+            <div class="special">
+                <div class="special__wrap diagonal">
+                    <div class="offer-grid">
+
+                        <div class="offer-grid__item offer" data-aos="fade-left">
+                            <div class="row">
+                                <div class="offer__description">
+                                    <h3 class="h3--dish-title" data-aos="fade" data-aos-delay="300">葡式風味</h3>
+                                    <a href="#" class="offer__link">查看推介</a> 
+                                </div>
+                                <!-- /.offer__description -->
+                                <div class="offer__img bg__img">
+                                    <div>
+                                        <img src="images/special/sp-portuguese-style.jpg" alt="Portuguese Style"> 
+                                    </div>
+                                </div>
+                                <!-- /.offer__img -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.offer-grid__item -->
+
+                        <div class="offer-grid__item offer" data-aos="fade-left" data-aos-delay="300">
+                            <div class="row">
+                                <div class="offer__description">
+                                    <h3 class="h3--dish-title" data-aos="fade" data-aos-delay="600">燒出好滋味</h3>
+                                    <a href="#" class="offer__link">查看推介</a>    
+                                </div>
+                                <!-- /.offer__description -->
+                                <div class="offer__img bg__img">
+                                    <div>
+                                        <img src="images/special/sp-chinese-bbq.jpg" alt="Chinese BBQ"> 
+                                    </div>
+                                </div>
+                                <!-- /.offer__img -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.offer-grid__item -->
+
+                        <div class="offer-grid__item offer" data-aos="fade-right" data-aos-delay="700">
+                            <div class="row">
+                                <div class="offer__img bg__img">
+                                    <div>
+                                        <img src="images/special/sp-taste-of-spring.jpg" alt="Taste of Spring"> 
+                                    </div>
+                                </div>
+                                <!-- /.offer__img -->
+                                <div class="offer__description">
+                                    <h3 class="h3--dish-title" data-aos="fade" data-aos-delay="900">春夏滋味道</h3>
+                                    <a href="#" class="offer__link">查看推介</a>    
+                                </div>
+                                <!-- /.offer__description -->
+                                
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.offer-grid__item -->
+
+                        <div class="offer-grid__item offer" data-aos="fade-right" data-aos-delay="500">
+                            <div class="row">
+                                <div class="offer__img bg__img">
+                                    <div>
+                                        <img src="images/special/sp-lobster.jpg" alt="Lobster"> 
+                                    </div>
+                                </div>
+                                <!-- /.offer__img -->
+                                <div class="offer__description">
+                                    <h3 class="h3--dish-title" data-aos="fade" data-aos-delay="700">龍蝦盛宴</h3>
+                                    <a href="#" class="offer__link">查看推介</a>    
+                                </div>
+                                <!-- /.offer__description -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.offer-grid__item -->          
+                    
+                    </div>
+                    <!-- /.offer-grid -->
+                </div>
+                <!-- /.special__wrap -->
+                <div class="clearfix"></div>
+            </div>
+            <!-- /.special -->
+
+            <div class="stores"> <!-- parallax effect goes here -->
+                <div class="stores__wrap">
+
+                    <div class="section-title--center reversed">
+                        <!-- 分店資料 -->
+                    </div>
+                    <!-- /.section-title -->
+                
+                    <div class="stores__card card" data-aos="fade-up">
+                        <paper-card image="images/locations/location-g2-card.jpg" elevation="1" animated-shadow="true">
+                            <div class="label--reversed" data-aos="fade" data-aos-delay="300">
+                                北京街店        
+                            </div>
+                            <!-- /.label--reversed -->
+                            <div class="card-content">
+                                <p class="paragraph--sm">新口岸北京街147號中華總商會大廈地下G舖</p>
+                                <div class="card-content__meta">
+                                    <ul class="v-list">
+                                        <li class="v-list__item">
+                                            <p class="meta--phone">
+                                                <a href="tel:85328780755">
+                                                    <iron-icon class='sm-icon' icon="communication:phone"></iron-icon>+853&nbsp;2878&nbsp;0755
+                                                </a>
+                                            </p>
+                                        </li>
+                                        <li class="v-list__item">
+                                            <p class="meta--time">
+                                                <iron-icon class='sm-icon' icon="device:access-time"></iron-icon>二十四小時
+                                            </p>
+                                            <p class="meta--time">&nbsp;</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.card-content -->
+                            </div>
+                            <!-- /.card-content -->
+                            <div class="card-actions">
+                                <paper-button raised><a class="pull--center" href="#">了解更多</a></paper-button>
+                            </div>
+                            <!-- /.card-actions -->
+                        </paper-card>
+                    </div>
+                    <!-- /.stores__card card -->
+
+                    <div class="stores__card card" data-aos="fade-up" data-aos-delay="300">
+                        <paper-card image="images/locations/location-g8-card.jpg" elevation="1" animated-shadow="true">
+                            <div class="label--reversed" data-aos="fade" data-aos-delay="600">
+                                氹仔濠景店        
+                            </div>
+                            <!-- /.label--reversed -->
+                            <div class="card-content">
+                                <p class="paragraph--sm">氹仔成都街525-531號濠景花園(31座-櫻花苑)地下</p>
+                                <div class="card-content__meta">
+                                    <ul class="v-list">
+                                        <li class="v-list__item">
+                                            <p class="meta--phone"><a href="tel:85328835171">
+                                            <iron-icon class='sm-icon' icon="communication:phone"></iron-icon>+853&nbsp;2883&nbsp;5171</a></p>
+                                        </li>
+                                        <li class="v-list__item">
+                                            <p class="meta--time">
+                                                <iron-icon class='sm-icon' icon="device:access-time"></iron-icon><time>07:00</time>&nbsp;&#8594;&nbsp;<time>00:00</time>
+                                            </p>
+                                            <p class="meta--time">&nbsp;</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.card-content__meta -->
+                            </div>
+                            <!-- /.card-content -->
+                            <div class="card-actions">
+                                <paper-button raised><a class="pull--center" href="#">了解更多</a></paper-button>
+                            </div>
+                            <!-- /.card-actions -->
+                        </paper-card>      
+                    </div>
+                    <!-- /.stores__card card -->
+
+                    <div class="stores__card card" data-aos="fade-up" data-aos-delay="600">
+                        <paper-card image="images/locations/location-2503-card.jpg" elevation="1" animated-shadow="true">
+                            <div class="label--reversed" data-aos="fade" data-aos-delay="900">
+                                威尼斯人店        
+                            </div>
+                            <!-- /.label--reversed -->
+                            <div class="card-content">
+                                <p class="paragraph--sm">澳門威尼斯人購物中心三樓，繁盛街726號</p>
+                                <div class="card-content__meta">
+                                    <ul class="v-list">
+                                        <li class="v-list__item">
+                                            <p class="meta--phone"><a href="tel:85328835171"><iron-icon class='sm-icon' icon="communication:phone"></iron-icon>+853&nbsp;2882&nbsp;8596</a></p>   
+                                        </li>
+                                        <li class="v-list__item">
+                                            <p class="meta--time">
+                                                <iron-icon class='sm-icon' icon="device:access-time"></iron-icon><time>10:00</time>&nbsp;&#8594;&nbsp;<time>11:00</time>&nbsp;&nbsp;<span class="label--default">星期日至星期四</span>
+                                            </p>
+                                            <p class="meta--time">
+                                                <iron-icon class='sm-icon' icon="time"></iron-icon><time>10:00</time>&nbsp;&#8594;&nbsp;<time>12:00</time>&nbsp;&nbsp;<span class="label--default">星期五至星期六</span>
+                                            </p>
+                                        </li>
+                                    </ul>        
+                                </div>
+                                 <!-- /.card-content__meta --> 
+                            </div>
+                            <!-- /.card-content -->
+                            <div class="card-actions">
+                                <paper-button><a class="pull--center" href="#">了解更多</a></paper-button>
+                            </div>
+                            <!-- /.card-actions -->
+                        </paper-card>   
+                    </div>
+                    <!-- /.stores__card card -->
+
+                </div>
+                <!-- /.stores__wrap -->
+                <div class="clearfix"></div>              
+            </div>
+            <!-- /.stores -->
+
+            <div class="recognition">
+                
+                <div class="recognition__item banner bg__img">
+                    
+                    <!-- <div class="row"> -->
+                        <div class="banner__wrap">
+                            <div class="banner__info">
+                                <h3 class="banner-title" data-aos="fade">我們的服務受到專業肯定</h3>
+                                <p class="paragraph--light push__top--sm" data-aos="fade" data-aos-delay="200">你現在閱讀的，並不是真的文案。這些文字，只顯示文案將會擺放的位置。我們會稱呼這些文案為「假字」。為何要用「假字」</p>
+                                <a href="#" class="btn__primary btn__arrow push__top--md" data-aos="fade-right" data-aos-delay="200"><span>了解更多<span class="arrow">&#8594;</span></span></a>
+                            </div>
+                            <img src="images/recognition-cover.jpg" alt="Recognition">    
+                        </div>
+                        <!-- /.banner__wrap -->
+                    <!-- </div> -->
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.recognition__item -->
+            </div>
+            <!-- /.recognition -->
+                
         </main>
         <!-- /.main -->
 
         <footer class="footer">
-            <p>Footer</p>    
+            <div class="footer__inner">
+                
+                <div class="footer__social">
+                    <ul class="h-list">
+                        <li class="h-list__item"><a href="#"><span class="ss-icon">facebook</span>&nbsp;&nbsp;Facebook</a></li>
+                        <li class="h-list__item">&nbsp;&nbsp;</li>
+                        <li class="h-list__item"><a href="#"><span class="ss-icon">instagram</span>&nbsp;&nbsp;Instagram</a></li>
+                    </ul>    
+                </div>
+                <!-- /.footer__social -->
+                
+                <nav class="footer__nav">
+                    <ul class="h-list">
+                        <li class="h-list__item"><span class="bold">友站連結：</span></li>
+                        <li class="h-list__item"><a href="#">盛邦集團</a></li>
+                        <li class="h-list__item">&nbsp;|&nbsp;</li>
+                        <li class="h-list__item"><a href="#">蜜蜜見咖啡館</a></li>
+                    </ul>        
+                </nav>
+                <!-- /.footer__nav -->
+                
+                <div class="footer__copy">
+                    <p class="copy pull--center">&copy;滋味滿屋美食坊 – 2016</p>    
+                </div>
+                <!-- /.footer__copy -->       
+            
+            </div>
+            <!-- /.footer__inner -->               
         </footer>
         <!-- /.footer -->
-
+        
+        <!-- jquery -->
+        <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')</script>
+        <!-- slides JS script -->
+        <script src='bower_components/SlidesJS/source/jquery.slides.min.js'></script>
+        <script src="js/script.js"></script>
+        <!-- web components js -->
+        <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
             /*
@@ -42,6 +485,16 @@
             */
         </script>
         <!-- <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
-        <script src="js/script.js"></script>
+        <!-- aos script -->
+        <script src="bower_components/aos/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 600,
+                easing: 'ease-in-sine',
+            });
+        </script>
+        
+        <!-- bootstrap JS -->
+         <script src='bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js'></script>
     </body>
 </html>

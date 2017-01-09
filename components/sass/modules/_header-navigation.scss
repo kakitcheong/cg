@@ -1,0 +1,88 @@
+////////////////////////////////////////////////////////////////////////////////
+//   navigation-header                                                        //
+////////////////////////////////////////////////////////////////////////////////
+
+.navigation-header{
+	@extend .navbar-header;
+	&__toggle{
+		@extend .pull--left, .visible--mobile, .navbar-toggle;
+		border: none;
+		@include border-radius(0, 0);
+		margin:0;
+		@include respond-to(sm-screen){
+			display: block;
+		}
+		.icon-bar{
+			width: 26px;
+			height: 2px;
+			background-color: $color__grey--light;
+			@include border-radius(0, 0);
+			@include transition(all, 0.4s, ease-in-out);
+		}
+		.top-bar {
+		    transform: rotate(45deg);
+		    transform-origin: 0 10%;
+		}
+		.middle-bar {
+			opacity: 0;
+		}
+		.bottom-bar {
+			transform: rotate(-45deg);
+			transform-origin: 0 90%;
+		}
+	}
+	&__brand{
+		@extend .navbar-brand;
+		height: 100%;
+		padding: $el__spacer--sm 0 0 0;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//   navigation-wrapper                                                       //
+////////////////////////////////////////////////////////////////////////////////
+
+.navigation-wrapper{
+	@extend .collapse, .navbar-collapse;
+	//@include adjust-font-size-to(14px);
+	//letter-spacing: em(1);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//   main-navigation                                                          //
+////////////////////////////////////////////////////////////////////////////////
+
+.main-navigation{
+	@extend .nav, .navbar-nav, .navbar-right;
+	font-weight: $weight--normal;
+	&__item{
+		@include adjust-font-size-to($ms-05);
+		&--active{
+			@extend .main-navigation__item, .active;
+			.main-navigation__link{
+				color: $color__brand;
+				&:hover, &:focus{
+					color: $color__brand;
+				}	
+			}
+		}
+		&--dropdown{
+			@extend .dropdown;
+		}
+	}
+	&__link{
+		color: $color__wht;
+		letter-spacing: em(1);
+		padding: $el__spacer--md*1.4 $el__spacer--xs $el__spacer--xs $el__spacer--xs !important;
+		//border-bottom: 1px solid rgba(32, 32, 32, 0);
+		//@include transition-property(border);
+		//@include transition-duration(0.5s);
+		//@include transition-timing-function(ease-in);
+		&:hover, &:focus{
+			color: $color__brand;
+			background: transparent !important;
+			//border-bottom: 1px solid rgba(32, 32, 32, 1);
+			//@include transition-timing-function(ease-out);
+		}
+	}
+}

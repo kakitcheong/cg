@@ -1,0 +1,32 @@
+/*** =====================================================
+This document contains all styles for different modules used in the application
+
+file path: modules/module-name;
+
+author: kc-slg
+created on: 23/11/2016
+last update: 23/11/2016
+===================================================== ***/
+
+////////////////////////////////////////////////////////////////////////////////
+//  global 				                                                      //
+////////////////////////////////////////////////////////////////////////////////
+
+@import 'modules/header-navigation';
+@import 'modules/header-hero';
+@import 'modules/carousel';
+
+////////////////////////////////////////////////////////////////////////////////
+//  index 				                                                      //
+////////////////////////////////////////////////////////////////////////////////
+
+@import 'modules/special';
+@import 'modules/stores';
+@import 'modules/menu';
+@import 'modules/recognition';
+
+////////////////////////////////////////////////////////////////////////////////
+//  sub-pages 				                                                  //
+////////////////////////////////////////////////////////////////////////////////
+
+@import 'modules/tab';

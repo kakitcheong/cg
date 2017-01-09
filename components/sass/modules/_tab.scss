@@ -1,0 +1,67 @@
+////////////////////////////////////////////////////////////////////////////////
+//  tab                                                  	                  //
+////////////////////////////////////////////////////////////////////////////////
+
+.tab{
+	@extend .container;
+	padding-bottom: $el__spacer--lg*2;
+	&__control,
+	&__content{
+		@extend .col-xs-12, .col-md-offset-1, .col-md-10;
+	}
+	&__control{
+		@extend .pull--center;
+	}
+	&__content{
+		@extend .tab-content;
+		margin-top: $el__spacer--md;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  tablist                                                  	              //
+////////////////////////////////////////////////////////////////////////////////
+
+.tablist{
+	@extend .nav, .nav-tabs;
+	display: inline-block;
+	margin: 0 auto;
+	border-bottom: none;
+}
+
+/*** bootstrap tabs style override ***/
+.tablist > li > a{
+	font-weight: $weight--normal;
+	color: $color__brand;
+	padding: $el__spacer--xs $el__spacer--sm;
+	border: $el__border--btn;
+	@include border-radius(0);
+}
+
+.tablist > li:nth-child(-n+3) > a{
+	margin-right: em(24);
+}
+
+.tablist > li > a:hover,
+.tablist > li > a:focus,
+.tablist > li.active > a,
+.tablist > li.active > a:hover,
+.tablist > li.active > a:focus{
+	color: $color__wht;
+	background-color: $color__brand;
+	border-color: $color__brand;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  tab-pane                                                  	              //
+////////////////////////////////////////////////////////////////////////////////
+
+.tab-pane{
+	&__col{
+		@extend .col-xs-6;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+}

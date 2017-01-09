@@ -1,0 +1,182 @@
+////////////////////////////////////////////////////////////////////////////////
+//  javascript hook                                                           //
+////////////////////////////////////////////////////////////////////////////////
+
+.bg__img{
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  opening message                                                 	      //
+////////////////////////////////////////////////////////////////////////////////
+
+.opening-message{
+	@extend .container-fluid;
+	position: relative;
+	padding-top: $el__spacer--lg*1.5;
+	padding-bottom: $el__spacer--lg*2;
+	&:after{
+		@include respond-to(md-screen){
+			//content: '滋味推介';	
+		}
+		color: $color__brand;
+		position: absolute;
+		bottom: 0;
+		font-weight: $weight--light;
+		@include adjust-font-size-to($ms1);
+		@extend .col-xs-offset-1;
+	}
+	&__wrap{
+		@extend .col-xs-12, .col-md-offset-2, .col-md-8, .pull--center;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//   carousel style                                                           //
+////////////////////////////////////////////////////////////////////////////////
+
+.carousel{
+	&__item{
+
+	}
+	&__img{
+		@include respond-to(md-screen){
+			height: em(560);
+		}
+		@include respond-to(lg-screen){
+			height: em(680);
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  btns                                                 	      			  //
+////////////////////////////////////////////////////////////////////////////////
+
+.btn{
+	background-color: $color__brand;
+	color: $color__wht;
+	border: none;
+	display: inline-block;
+	text-transform: uppercase;	
+	padding: em(18) em(36) !important;
+	@include border-radius(16px, 16px);
+	@include box-sizing(border-box);
+	@extend .text-center;
+	transition: color 0.1s cubic-bezier(0.16, 0.08, 0.355, 1), background 0.1s cubic-bezier(0.16, 0.08, 0.355, 1);
+	&:hover{
+		background-color: lighten($color__brand, 10%);
+		color: $color__wht;
+	}
+	&__default{
+		@extend .btn;
+		background: transparent;
+		color: $color__brand;
+		border: $el__border--btn;
+		&:hover{
+			color:$color__wht !important;
+		}
+		&--wht{
+			@extend .btn, .btn__default;
+			color: $color__wht;
+			border: $el__border--btn--wht;
+			display: table;
+			margin: 0 auto;	
+		}
+	}
+	&__primary{
+		@extend .btn;
+	}
+	&__arrow{
+		position: relative;
+		@include transition(background-color, 300ms, ease-out);
+		&.btn--default{
+			span{
+				color: $color__brand;
+			}
+		}
+		span{
+			display: inline-block;
+			position: relative;
+			@include transition(all, 0.6s, ease-out);
+			will-change: transform;	
+		}
+		&:hover{
+			span{
+				color: $color__wht;
+				transform: translate3d($el__spacer--xs*-0.5, 0, 0);
+			}
+		}
+		span.arrow{
+			position: absolute;
+			right: 0;
+			opacity: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			@include transition(all, 0.3s, ease-out);
+			will-change: right, opacity;
+		}
+		&:hover{
+			span{
+				&.arrow{
+					opacity: 1;
+					right: $el__spacer--xs*-1.5;
+				}
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  list style                                                 	              //
+////////////////////////////////////////////////////////////////////////////////
+
+.h-list{
+	margin: 0 auto;
+	&__item{
+		display: inline;
+	}
+	&__link{
+		display: inline-block;
+		width: auto;
+	}
+}
+
+.info{
+	&__sub-head{
+		@include adjust-font-size-to($ms-05);
+		letter-spacing: em(2);
+		margin-bottom: $el__spacer--xs/2;
+	}
+	&__body{
+		font-weight: $weight--normal;
+	}
+	&:after{
+		content: "";
+	    display: block;
+	    width: em(32);
+	    border-bottom: $el__border;
+	    margin: $el__spacer--sm 0 $el__spacer--xs;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  banner style                                                 	          //
+////////////////////////////////////////////////////////////////////////////////
+
+.banner{
+	@extend .col-xs-12;
+	&__wrap{
+		@extend .col-xs-12, .col-md-offset-1, .col-md-5;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//   card style                                                               //
+////////////////////////////////////////////////////////////////////////////////
+
+.card-content__meta{
+	margin-top: $el__spacer--xs;	
+}

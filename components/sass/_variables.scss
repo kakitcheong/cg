@@ -3,20 +3,55 @@ This document contains all variables used in the application
 
 author: kc-slg
 created on: 19/11/2016
-last update: 19/11/2016
+last update: 23/11/2016
 ===================================================== ***/
 
 // contents ------------
 //  - color variables
 //      - palette
-//			- background
-//			- border
+//		- background
+//		- border
 //      - text
-//  - typographic variables
-//      - base
-//			- typefaces
-//			- body
 //  - elements
-//      - border
-//			- spacer
+//		- borders
+//		- spacers
 // ---------------------
+
+////////////////////////////////////////////////////////////////////////////////
+//  1. color variables                                                        //
+////////////////////////////////////////////////////////////////////////////////
+
+/*** 1.1 general color ***/
+$color__wht: #ffffff;
+$color__blk: #000000;
+$color__grey--light: #E9E9E9;
+$color__grey: #989898;
+$color__grey--dark: #404041;
+$color__brand: #E42C47;
+$color__brand--light: $color__brand*0.8;
+
+/*** 1.2 background color ***/
+$color__background: $color__wht;
+
+/*** 1.3 border color ***/
+$color__border: #E3E3E3;
+
+/*** 1.4 text color ***/
+$color__paragraph: $color__grey;
+$color__headline: $color__brand;
+
+////////////////////////////////////////////////////////////////////////////////
+//  2. elements                                                               //
+////////////////////////////////////////////////////////////////////////////////
+
+/*** 2.1 border ***/
+$el__border: 1px solid $color__border;
+$el__border--btn: 1px solid $color__brand;
+$el__border--btn--wht: 1px solid $color__wht;
+
+/*** 2.2 spacers ***/
+$el__spacer--xxs: em(12);
+$el__spacer--xs: em(16);
+$el__spacer--sm: em(24);
+$el__spacer--md: em(36);
+$el__spacer--lg: em(48);

@@ -1,0 +1,24 @@
+.in-body{
+	background-color: $color__brand;
+	@include transition(all, 0.6s, ease-out);
+}
+
+.header__navigation{
+	&.in-body{
+		.main-navigation{
+			&__item{
+				&--active{
+					.main-navigation__link{
+						color: $color__grey--dark;
+					}	
+				}
+			}
+			&__link{
+				color: $color__wht;
+				&:hover, &:focus{
+					color: $color__grey--dark;
+				}
+			}
+		}
+	}
+}

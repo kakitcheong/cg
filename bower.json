@@ -15,6 +15,11 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap-sass": "boostrap-sass#^3.3.7"
+    "bootstrap-sass": "boostrap-sass#^3.3.7",
+    "handlebars": "^4.0.5",
+    "SlidesJS": "^3.0.4",
+    "iron-icons": "PolymerElements/iron-icons#^1.2.0",
+    "aos": "^2.1.1",
+    "google-map": "GoogleWebComponents/google-map#^1.1.14"
   }
 }
